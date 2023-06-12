@@ -1,34 +1,26 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-
 console.log(34234234)
-    console.log(34343)
+
+console.log(34343)
 </script>
 
 <template>
   <main class="container mx-auto">
-    <header>
-    </header>
+    <header></header>
     <section class="py-8 text-3xl leading-tight">
-      <p>The Local Code Lab invents radically distributed approaches to urban 
-      transformation and the collaborative tools to make these strategies possible. 
-      testsetsetsetest
-
-      </p>
+      <p>GCF Food for Thought</p>
     </section>
 
     <footer
       class="py-8 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
-    >
-
-    </footer>
+    ></footer>
   </main>
 </template>
 
 <style>
-
-
 body {
-  background-color: #FFFDF8;
+  background-color: #fffdf8;
   font-family: Alpina;
   font-weight: 300;
 }
