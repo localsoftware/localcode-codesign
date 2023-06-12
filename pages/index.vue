@@ -10,6 +10,7 @@ console.log(34343)
     <header></header>
     <section class="py-8 text-3xl leading-tight">
       <p>GCF Food for Thought</p>
+      <LandingPage />
     </section>
 
     <footer
