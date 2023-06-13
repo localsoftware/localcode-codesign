@@ -9,7 +9,6 @@ console.log(34343)
   <main class="container mx-auto">
     <header></header>
     <section class="py-8 text-3xl leading-tight">
-      <p>GCF Food for Thought</p>
       <LandingPage />
     </section>
 
