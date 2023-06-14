@@ -25,6 +25,7 @@ import { Icon } from '@iconify/vue'
       </div>
     </a>
   </div>
+  
 </template>
 
 <style scoped></style>
