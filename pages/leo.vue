@@ -6,9 +6,9 @@ console.log(34343)
 </script>
 
 <template>
-  <main class="container mx-auto font-sans font-normal">
+  <main class="container mx-auto">
     <header></header>
-    <section class="text-xl">
+    <section class="py-8 text-3xl leading-tight">
       <LandingPage />
     </section>
 
