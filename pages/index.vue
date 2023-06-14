@@ -1,7 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
+import { ref } from 'vue'
+
+const currentSection = ref(null)
+
 function changeSection(sectionId) {
   console.log(sectionId, 'Section Num')
+  currentSection.value = sectionId
 }
 </script>
 
