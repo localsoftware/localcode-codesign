@@ -1,5 +1,9 @@
 <script setup>
-import { Icon } from '@iconify/vue'
+const emit = defineEmits(['scrollTo'])
+
+function changeSection(sectionId) {
+  emit('scrollTo', sectionId)
+}
 </script>
 
 <template>
@@ -16,7 +20,11 @@ import { Icon } from '@iconify/vue'
     <img src="/imgs/COVER SKETCH.png" />
   </div>
 
-  <SectionButton :title="`Let's get started 🚀`" />
+  <SectionButton
+    :title="`Let's get started 🚀`"
+    :section-id="0"
+    @scroll-to="changeSection"
+  />
 </template>
 
 <style scoped></style>

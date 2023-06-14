@@ -1,15 +1,15 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-console.log(34234234)
-
-console.log(34343)
+function changeSection(sectionId) {
+  console.log(sectionId, 'Section Num')
+}
 </script>
 
 <template>
   <main class="container mx-auto font-sans font-normal">
     <header></header>
     <section class="text-xl">
-      <LandingPage />
+      <LandingPage @scroll-to="changeSection" />
     </section>
 
     <footer
@@ -23,12 +23,5 @@ body {
   background-color: #fffdf8;
   font-family: Alpina;
   font-weight: 300;
-}
-
-.footer-item {
-  padding: 0.5em 0;
-  font-size: 16px;
-  color: #ff0000;
-  border-top: 1px solid #ff0000;
 }
 </style>
