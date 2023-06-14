@@ -1,10 +1,13 @@
 <script setup>
+import { useLocationStore } from '~/store/location'
+
 const props = defineProps({
   title: { type: String, default: () => '' },
   sectionId: { type: Number, default: () => 0 },
 })
 
-const emit = defineEmits(['scrollTo'])
+const locationStore = useLocationStore()
+const { changeCurrentLocation } = locationStore
 </script>
 
 <template>
@@ -12,7 +15,7 @@ const emit = defineEmits(['scrollTo'])
     <a href="#">
       <div
         class="h-14 w-full grid grid-cols-1 place-items-center bg-sky-400 rounded-full text-white uppercase"
-        @click="emit('scrollTo', sectionId)"
+        @click="changeCurrentLocation(sectionId)"
       >
         {{ title }}
       </div>

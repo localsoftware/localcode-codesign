@@ -1,20 +1,17 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { ref } from 'vue'
+import { useLocationStore } from '~/store/location'
+import { storeToRefs } from 'pinia'
 
-const currentSection = ref(null)
-
-function changeSection(sectionId) {
-  console.log(sectionId, 'Section Num')
-  currentSection.value = sectionId
-}
+const locationStore = useLocationStore()
+const { currentLocation } = storeToRefs(locationStore)
 </script>
 
 <template>
   <main class="container mx-auto font-sans font-normal">
     <header></header>
     <section class="text-xl">
-      <LandingPage @scroll-to="changeSection" />
+      <LandingPage />
     </section>
 
     <footer

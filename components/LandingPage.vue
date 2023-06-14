@@ -1,10 +1,4 @@
-<script setup>
-const emit = defineEmits(['scrollTo'])
-
-function changeSection(sectionId) {
-  emit('scrollTo', sectionId)
-}
-</script>
+<script setup></script>
 
 <template>
   <div class="grid grid-cols-1 place-items-center px-1 py-10">
@@ -20,11 +14,7 @@ function changeSection(sectionId) {
     <img src="/imgs/COVER SKETCH.png" />
   </div>
 
-  <SectionButton
-    :title="`Let's get started 🚀`"
-    :section-id="0"
-    @scroll-to="changeSection"
-  />
+  <SectionButton :title="`Let's get started 🚀`" :section-id="0" />
 </template>
 
 <style scoped></style>
