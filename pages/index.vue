@@ -11,7 +11,7 @@ console.log(34343)
     <section class="text-xl">
       <LandingPage />
     </section>
-
+      <WhoAreYou />
     <footer
       class="py-8 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
     ></footer>

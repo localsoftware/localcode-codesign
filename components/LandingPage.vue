@@ -1,8 +1,8 @@
 <script setup>
-import { Icon } from '@iconify/vue'
 </script>
 
 <template>
+  
   <div class="grid grid-cols-1 place-items-center px-1 py-10">
     <div class="py-4 text-center">
       <p>Nice to meet you 👋</p>
@@ -24,8 +24,9 @@ import { Icon } from '@iconify/vue'
         Let's get started 🚀
       </div>
     </a>
+    
   </div>
-  
+
 </template>
 
 <style scoped></style>
