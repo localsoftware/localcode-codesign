@@ -12,6 +12,7 @@ console.log(34343)
       <LandingPage />
     </section>
       <WhoAreYou />
+      <YourAge />
     <footer
       class="py-8 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
     ></footer>
@@ -21,8 +22,6 @@ console.log(34343)
 <style>
 body {
   background-color: #fffdf8;
-  font-family: Alpina;
-  font-weight: 300;
 }
 
 .footer-item {

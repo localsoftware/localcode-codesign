@@ -13,10 +13,13 @@
       <li>distributed 150,000 lbs of organic produce 🥦</li>
     </ul>
   </div>
+
   <div class="grid grid-cols-1 place-items-center py-10">
     <img class="px-10" src="/imgs/section-01.png" />
     <p class="px-16 text-center">Why don’t you tell us a bit about yourself, so that we can give you more relevant information.<br>🤝</p>
+
     <div class="h-24 border border-l-black my-6"></div>
+    
     <h2 class="uppercase">Who are you?</h2>
     <div class="flex gap-2 mt-2">
         <ul class="contents">
