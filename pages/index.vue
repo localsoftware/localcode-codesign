@@ -13,6 +13,8 @@ console.log(34343)
     </section>
       <WhoAreYou />
       <YourAge />
+      <WhereDoYouLive />
+      <HowWeWork />
     <footer
       class="py-8 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
     ></footer>

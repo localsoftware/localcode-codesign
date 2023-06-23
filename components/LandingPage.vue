@@ -13,7 +13,7 @@
         Green City Force
       </p>
     </div>
-    <img src="/imgs/COVER SKETCH.png" />
+    <img src="/imgs/COVER SKETCH.png" alt="" />
   </div>
 
   <div class="w-11/12 fixed left-2/4 -translate-x-2/4 bottom-5">

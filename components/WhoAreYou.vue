@@ -22,7 +22,7 @@
     
     <h2 class="uppercase">Who are you?</h2>
     <div class="flex gap-2 mt-2">
-        <ul class="contents">
+        <ul class="contents whitespace-nowrap">
             <li class="border-2 border-black rounded-full px-3">Resident 🏡</li>
             <li class="border-2 border-black rounded-full px-3">Volunteer 🙋</li>
             <li class="border-2 border-black rounded-full px-3">Supporter 💪</li>

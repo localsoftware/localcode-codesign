@@ -8,7 +8,7 @@
 
     <h2 class="uppercase">What is your age?</h2>
     <div class="flex gap-2 mt-2">
-        <ul class="contents">
+        <ul class="contents whitespace-nowrap">
             <li class="border-2 border-black rounded-full px-3">18 👶</li>
             <li class="border-2 border-black rounded-full px-3">18–24 🧒</li>
             <li class="border-2 border-black rounded-full px-3">25-64 🧑</li>
@@ -18,7 +18,7 @@
 
     <div class="h-24 border border-l-black border-dotted my-6"></div>
 
-    <div class="rounded-3xl bg-lime-300 px-10 py-8">
+    <div class="rounded-3xl bg-orange-500 px-10 py-8">
         <h1 class="uppercase text-center mb-4">💡 Did you know?</h1>
         <p class="text-sm mb-2">Our cohorts are made up of:</p>
         <ul class="text-sm list-disc">
