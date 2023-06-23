@@ -5,6 +5,7 @@ import { storeToRefs } from 'pinia'
 
 const locationStore = useLocationStore()
 const { currentLocation } = storeToRefs(locationStore)
+console.log(currentLocation.value, 'testestsetest')
 </script>
 
 <template>
@@ -13,10 +14,10 @@ const { currentLocation } = storeToRefs(locationStore)
     <section class="text-xl">
       <LandingPage />
     </section>
-      <WhoAreYou />
-      <YourAge />
-      <WhereDoYouLive />
-      <HowWeWork />
+    <WhoAreYou />
+    <YourAge />
+    <WhereDoYouLive />
+    <HowWeWork />
     <footer
       class="py-8 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
     ></footer>
