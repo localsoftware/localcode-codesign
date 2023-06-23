@@ -1,8 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-console.log(34234234)
+import { useLocationStore } from '~/store/location'
+import { storeToRefs } from 'pinia'
 
-console.log(34343)
+const locationStore = useLocationStore()
+const { currentLocation } = storeToRefs(locationStore)
 </script>
 
 <template>
@@ -24,12 +26,5 @@ console.log(34343)
 <style>
 body {
   background-color: #fffdf8;
-}
-
-.footer-item {
-  padding: 0.5em 0;
-  font-size: 16px;
-  color: #ff0000;
-  border-top: 1px solid #ff0000;
 }
 </style>

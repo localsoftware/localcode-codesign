@@ -1,6 +1,7 @@
 <script setup>
 </script>
 
+
 <template>
   
   <div class="grid grid-cols-1 place-items-center px-1 py-10">
@@ -26,6 +27,7 @@
     </a>
     
   </div>
+
 
 </template>
 
