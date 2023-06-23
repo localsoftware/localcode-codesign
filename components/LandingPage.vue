@@ -1,6 +1,9 @@
-<script setup></script>
+<script setup>
+</script>
+
 
 <template>
+  
   <div class="grid grid-cols-1 place-items-center px-1 py-10">
     <div class="py-4 text-center">
       <p>Nice to meet you 👋</p>
@@ -11,10 +14,21 @@
         Green City Force
       </p>
     </div>
-    <img src="/imgs/COVER SKETCH.png" />
+    <img src="/imgs/COVER SKETCH.png" alt="" />
   </div>
 
-  <SectionButton :title="`Let's get started 🚀`" :section-id="0" />
+  <div class="w-11/12 fixed left-2/4 -translate-x-2/4 bottom-5">
+    <a href="#">
+      <div
+        class="h-14 w-full grid grid-cols-1 place-items-center bg-sky-400 rounded-full text-white uppercase"
+      >
+        Let's get started 🚀
+      </div>
+    </a>
+    
+  </div>
+
+
 </template>
 
 <style scoped></style>

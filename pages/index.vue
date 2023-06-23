@@ -13,7 +13,10 @@ const { currentLocation } = storeToRefs(locationStore)
     <section class="text-xl">
       <LandingPage />
     </section>
-
+      <WhoAreYou />
+      <YourAge />
+      <WhereDoYouLive />
+      <HowWeWork />
     <footer
       class="py-8 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
     ></footer>
@@ -23,7 +26,5 @@ const { currentLocation } = storeToRefs(locationStore)
 <style>
 body {
   background-color: #fffdf8;
-  font-family: Alpina;
-  font-weight: 300;
 }
 </style>
