@@ -24,6 +24,7 @@ console.log(currentLocation.value, 'testestsetest')
       <OurCurrentEvents />
       <MemberProfile />
       <LetsMeet />
+      <SectionButton :title="'Lets get started 🚀'" :section-id="1" />
     <footer
       class="py-14 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
     ></footer>
