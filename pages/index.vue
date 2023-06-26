@@ -5,6 +5,7 @@ import { storeToRefs } from 'pinia'
 
 const locationStore = useLocationStore()
 const { currentLocation } = storeToRefs(locationStore)
+console.log(currentLocation.value, 'testestsetest')
 </script>
 
 <template>
