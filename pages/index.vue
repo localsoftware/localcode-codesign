@@ -18,8 +18,13 @@ const { currentLocation } = storeToRefs(locationStore)
       <WhereDoYouLive />
       <HowWeWork />
       <OurEcoHub />
+      <WhatWeDo />
+      <GetToKnowUs />
+      <OurCurrentEvents />
+      <MemberProfile />
+      <LetsMeet />
     <footer
-      class="py-8 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
+      class="py-14 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
     ></footer>
   </main>
 </template>
