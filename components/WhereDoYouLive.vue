@@ -31,7 +31,7 @@ const ecoHubOptions = computed(() => {
     :type="'borough'"
   />
 
-  <div class="h-24 border border-l-black border-dotted my-6"></div>
+  <SeparatorLine />
 
   <div class="rounded-3xl bg-blue-500 px-10 py-8">
     <h1 class="uppercase text-center mb-4">💡 Did you know?</h1>
@@ -41,7 +41,7 @@ const ecoHubOptions = computed(() => {
     </p>
   </div>
 
-  <div class="h-24 border border-l-black border-dotted my-6"></div>
+  <SeparatorLine />
 
   <OptionButton
     :question="'Yay, we have 3 farms in your area'"

@@ -13,8 +13,10 @@
     </ul>
   </div>
 
+  <SeparatorLine />
+
   <div class="grid grid-cols-1 place-items-center py-10">
-    <img class="px-10" src="/imgs/section-01.png" />
+    <img class="-mt-12 px-10" src="/imgs/section-01.png" />
     <p class="px-16 text-center">
       Why don’t you tell us a bit about yourself, so that we can give you more
       relevant information.<br />🤝
@@ -22,14 +24,10 @@
 
     <div class="h-24 border border-l-black my-6"></div>
 
-    <h2 class="uppercase">Who are you?</h2>
-    <div class="flex gap-2 mt-2">
-      <ul class="contents whitespace-nowrap">
-        <li class="border-2 border-black rounded-full px-3">Resident 🏡</li>
-        <li class="border-2 border-black rounded-full px-3">Volunteer 🙋</li>
-        <li class="border-2 border-black rounded-full px-3">Supporter 💪</li>
-      </ul>
-    </div>
+    <OptionButton
+      :question="'Who are you?'"
+      :options="['Resident 🏡', 'Volunteer 🙋', 'Supporter 💪']"
+    />
   </div>
 </template>
 
