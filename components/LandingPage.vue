@@ -13,8 +13,6 @@
     </div>
     <img src="/imgs/COVER SKETCH.png" alt="" />
   </div>
-
-  <SectionButton :title="'Lets get started 🚀'" :section-id="1" />
 </template>
 
 <style scoped></style>

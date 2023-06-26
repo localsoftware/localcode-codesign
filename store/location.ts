@@ -6,5 +6,12 @@ export const useLocationStore = defineStore('locationStore', () => {
   function changeCurrentLocation(location: number) {
     currentLocation.value = location
   }
-  return { changeCurrentLocation, currentLocation }
+
+  const currentBorough = ref('Brooklyn')
+
+  function changeCurrentBorough(borough: string) {
+    currentBorough.value = borough
+  }
+
+  return { changeCurrentLocation, currentLocation, changeCurrentBorough, currentBorough }
 })
