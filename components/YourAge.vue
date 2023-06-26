@@ -4,15 +4,10 @@
   <div class="grid grid-cols-1 place-items-center py-10">
     <div class="h-24 border border-l-black mb-16"></div>
 
-    <h2 class="uppercase">What is your age?</h2>
-    <div class="flex gap-2 mt-2">
-      <ul class="contents whitespace-nowrap">
-        <li class="border-2 border-black rounded-full px-3">18 👶</li>
-        <li class="border-2 border-black rounded-full px-3">18–24 🧒</li>
-        <li class="border-2 border-black rounded-full px-3">25-64 🧑</li>
-        <li class="border-2 border-black rounded-full px-3">65+ 👴</li>
-      </ul>
-    </div>
+    <OptionButton
+      :question="'What is your age?'"
+      :options="['18 👶', '18–24 🧒', '25-64 🧑', '65+ 👴']"
+    />
 
     <div class="h-24 border border-l-black border-dotted my-6"></div>
 

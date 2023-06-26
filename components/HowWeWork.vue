@@ -10,15 +10,10 @@
 
     <img class="px-10 my-12" src="/imgs/section-02.png" alt="" />
 
-    <h2 class="uppercase">Btw, what is your best skill?</h2>
-    <div class="flex gap-2 mt-2">
-      <ul class="contents whitespace-nowrap">
-        <li class="border-2 border-black rounded-full px-3">Planning</li>
-        <li class="border-2 border-black rounded-full px-3">A green thumb</li>
-        <li class="border-2 border-black rounded-full px-3">Team work</li>
-        <li class="border-2 border-black rounded-full px-3">Communication</li>
-      </ul>
-    </div>
+    <OptionButton
+      :question="'Btw, what is your best skill?'"
+      :options="['Planning', 'A green thumb', 'Team work', 'Communication']"
+    />
 
     <div class="h-24 border border-l-black border-dotted my-6"></div>
 

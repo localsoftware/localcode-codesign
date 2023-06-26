@@ -18,9 +18,7 @@
   <div
     class="flex mt-2 rounded-2xl bg-lime-400 px-3 py-2 w-10/12 ml-3 text-right"
   >
-    <p class="flex text-sm items-end">
-      Within the past 10 years, Green City Force has:
-    </p>
+    <p class="flex text-sm items-end">Thu, May 18, 2023 at 11am</p>
   </div>
 
   <div class="mt-8 w-11/12 m-auto">
