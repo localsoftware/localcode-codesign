@@ -11,7 +11,7 @@
         Green City Force
       </p>
     </div>
-    <img class="-mt-12 -mb-44" src="/imgs/COVER SKETCH.png" alt="" />
+    <img class="-mt-12 -mb-44" src="/imgs/COVER_SKETCH.png" alt="" />
   </div>
   <SeparatorLine />
 </template>
