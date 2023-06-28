@@ -33,12 +33,14 @@ const ecoHubOptions = computed(() => {
 
   <SeparatorLine />
 
-  <div class="rounded-3xl bg-blue-500 px-10 py-8">
-    <h1 class="uppercase text-center mb-4">💡 Did you know?</h1>
-    <p class="text-sm mb-2">
-      We have three Eco-Hubs in Brooklyn.<br />Why don’t you come check them
-      out? 👀
-    </p>
+  <div class="grid grid-cols-1 place-items-center px-5">
+    <div class="rounded-3xl bg-blue-500 px-10 py-8">
+      <h1 class="uppercase text-center mb-4">💡 Did you know?</h1>
+      <p class="text-sm mb-2">
+        We have three Eco-Hubs in Brooklyn.<br />Why don’t you come check them
+        out? 👀
+      </p>
+    </div>
   </div>
 
   <SeparatorLine />

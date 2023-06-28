@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="grid grid-cols-1 place-items-center pb-10">
-    <div class="h-48 border border-l-black mb-10"></div>
+  <SeparatorLine />
 
+  <div class="grid grid-cols-1 place-items-center pb-10">
     <img class="w-1/2 px-4 mb-2 rounded-xl" src="/imgs/section-07.jpg" />
     <h3 class="text-sm">Louvinious Shuhari</h3>
   </div>

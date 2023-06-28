@@ -7,9 +7,9 @@
     <h2 class="uppercase">Our Eco-Hub grows:</h2>
 
     <img class="px-10 mt-12" src="/imgs/diagram-01.svg" alt="" />
-
-    <div class="h-24 border border-l-black my-6"></div>
   </div>
+
+  <SeparatorLine />
 </template>
 
 <style scoped></style>
