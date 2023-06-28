@@ -1,6 +1,7 @@
 <script setup></script>
 
 <template>
+  <DThreeBox />
   <div class="grid grid-cols-1 place-items-center px-1 pt-10">
     <div class="py-3 text-center">
       <p>Nice to meet you 👋</p>
