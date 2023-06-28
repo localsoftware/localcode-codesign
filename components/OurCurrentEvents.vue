@@ -1,9 +1,9 @@
 <script setup></script>
 
 <template>
-  <div class="grid grid-cols-1 place-items-center pb-10">
-    <div class="h-24 border border-l-black border-dotted mb-10"></div>
+  <SeparatorLine />
 
+  <div class="grid grid-cols-1 place-items-center">
     <img class="pl-6 pr-12 -mt-20 mb-8" src="/imgs/section-04.png" />
 
     <div class="grid grid-cols-1 place-items-center">

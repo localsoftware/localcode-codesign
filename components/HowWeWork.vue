@@ -1,22 +1,25 @@
 <script setup></script>
 
 <template>
-  <div class="grid grid-cols-1 place-items-center py-10">
-    <div class="h-24 border border-l-black mb-16"></div>
+  <SeparatorLine />
 
+  <div class="grid grid-cols-1 place-items-center">
     <h2 class="uppercase">
       Great to know we are neighbors!<br />Want to find out how we work?
     </h2>
 
     <img class="px-10 my-12" src="/imgs/section-02.png" alt="" />
+  </div>
 
-    <OptionButton
-      :question="'Btw, what is your best skill?'"
-      :options="['Planning', 'A green thumb', 'Team work', 'Communication']"
-    />
+  <OptionButton
+    :question="'Btw, what is your best skill?'"
+    :options="['Planning', 'A Green Thumb', 'Team Work', 'Communication']"
+    :type="'skill'"
+  />
 
-    <div class="h-24 border border-l-black border-dotted my-6"></div>
+  <SeparatorLine />
 
+  <div class="grid grid-cols-1 place-items-center px-5">
     <div class="rounded-3xl bg-yellow-300 px-10 py-8">
       <h1 class="uppercase text-center mb-4">💡 Did you know?</h1>
       <p class="text-sm mb-2">GCF Corps Members receive:</p>
@@ -34,9 +37,8 @@
         <li>Career services post-graduation</li>
       </ul>
     </div>
-
-    <div class="h-24 border border-l-black border-dotted mt-8"></div>
   </div>
+  <SeparatorLine />
 </template>
 
 <style scoped></style>
