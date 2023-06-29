@@ -8,10 +8,12 @@ const props = defineProps({
 })
 
 const locationStore = useLocationStore()
+const activeButton = ref('')
 const { changeCurrentBorough, changeCurrentSkill, changeCurrentEmployer } =
   locationStore
 
 const triggerFunction = (type, option) => {
+  activeButton.value = option
   switch (type) {
     case 'borough':
       changeCurrentBorough(option)
@@ -29,7 +31,9 @@ const triggerFunction = (type, option) => {
   }
 }
 
-const extraClass = 'bg-black text-white'
+const buttonClass =
+  'border-2 border-black rounded-full px-3 capitalize hover:bg-black hover:text-white'
+const extraClass = ' !bg-black !text-white'
 </script>
 
 <template>
@@ -43,7 +47,9 @@ const extraClass = 'bg-black text-white'
           <li
             v-for="option in options"
             :key="option"
-            class="border-2 border-black rounded-full px-3 capitalize hover:bg-black hover:text-white"
+            :class="
+              activeButton === option ? buttonClass + extraClass : buttonClass
+            "
             @click="triggerFunction(type, option)"
           >
             {{ option }}
