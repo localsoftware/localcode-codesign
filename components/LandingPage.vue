@@ -14,7 +14,7 @@
     <img class="-mt-12 -mb-44" src="/imgs/COVER SKETCH.png" alt="" />
   </div>
   <SeparatorLine />
-  <SectionButton :title="'Lets get started 🚀'" :section-id="1" />
+  <SectionButton :title="'Let*s get started 🚀'" :section-id="1" />
 </template>
 
 <style scoped></style>

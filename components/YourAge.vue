@@ -25,9 +25,9 @@
   <SeparatorLine />
 
   <SectionButton
-    :title="'New title 🚀'"
+    :title="'How we Work 🏋️'"
     :section-id="1"
-    :color="'bg-green-400'"
+    :color="'bg-yellow-400'"
   />
 </template>
 

@@ -15,7 +15,7 @@ const { changeCurrentLocation } = locationStore
   <div class="w-11/12 sticky m-auto bottom-5">
     <a href="#">
       <div
-        :class="`h-14 w-full grid grid-cols-1 place-items-center ${color} rounded-full text-white uppercase`"
+        :class="`h-14 w-full grid grid-cols-1 place-items-center ${color} rounded-full text-white uppercase hidden`"
         @click="changeCurrentLocation(sectionId)"
       >
         {{ title }}
