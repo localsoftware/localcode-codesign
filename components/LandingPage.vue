@@ -11,7 +11,7 @@
         Green City Force
       </p>
     </div>
-    <img class="-mt-12 -mb-44" src="/imgs/COVER SKETCH.png" alt="" />
+    <img class="-mt-12 -mb-44" src="/imgs/cover_sketch.png" alt="" />
   </div>
   <SeparatorLine />
   <SectionButton :title="'Let*s get started 🚀'" :section-id="1" />
