@@ -41,7 +41,7 @@ const triggerFunction = (type, option) => {
           <li
             v-for="option in options"
             :key="option"
-            class="border-2 border-black rounded-full px-3 capitalize hover:bg-black hover:text-white active:bg-black active:text-white"
+            :class="`border-2 border-black rounded-full px-3 capitalize hover:bg-black hover:text-white { 'active:bg-black active:text-white': isActive }`"
             @click="triggerFunction(type, option)"
           >
             {{ option }}
