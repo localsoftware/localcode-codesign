@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import { useLocationStore } from '~/store/location'
+const locationStore = useLocationStore()
+const { changeCurrentLocation } = locationStore
+
+changeCurrentLocation('landing')
+</script>
 
 <template>
   <div class="grid grid-cols-1 place-items-center px-1 pt-10">
@@ -14,7 +20,6 @@
     <img class="-mt-12 -mb-44" src="/imgs/cover_sketch.png" alt="" />
   </div>
   <SeparatorLine />
-  <SectionButton :title="'Let*s get started 🚀'" :section-id="1" />
 </template>
 
 <style scoped></style>

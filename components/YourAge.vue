@@ -23,12 +23,6 @@
   </div>
 
   <SeparatorLine />
-
-  <SectionButton
-    :title="'How we Work 🏋️'"
-    :section-id="1"
-    :color="'bg-yellow-400'"
-  />
 </template>
 
 <style scoped></style>

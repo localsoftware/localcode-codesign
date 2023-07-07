@@ -1,4 +1,10 @@
-<script setup></script>
+<script setup>
+import { useLocationStore } from '~/store/location'
+const locationStore = useLocationStore()
+const { changeCurrentLocation } = locationStore
+
+changeCurrentLocation('howWeWork')
+</script>
 
 <template>
   <SeparatorLine />
