@@ -1,37 +1,37 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { useLocationStore } from '~/store/location'
-import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import { useElementVisibility } from '@vueuse/core'
 
 const elementVisibility = ref({})
+
 const landing = ref(null)
-const testLanding = ref(useElementVisibility(landing))
 elementVisibility.value.landing = useElementVisibility(landing)
 
 const howWeWork = ref(null)
 elementVisibility.value.howWeWork = useElementVisibility(howWeWork)
 
-const locationStore = useLocationStore()
-const { currentLocation } = storeToRefs(locationStore)
-console.log(currentLocation.value, 'testestsetest')
+const whatWeDo = ref(null)
+elementVisibility.value.whatWeDo = useElementVisibility(whatWeDo)
+
+const getToKnowUs = ref(null)
+elementVisibility.value.getToKnowUs = useElementVisibility(getToKnowUs)
+
+const letsMeet = ref(null)
+elementVisibility.value.letsMeet = useElementVisibility(letsMeet)
 
 const currentSectionButton = computed(() => {
-  switch (elementVisibility.value) {
-    case elementVisibility.value.landing:
-      return { title: `Let's get started 🚀`, color: 'bg-blue-400' }
-    case elementVisibility.value.howWeWork:
-      return { title: 'How we Work 🏋️', color: 'bg-yellow-400' }
-    case 'what-we-do':
-      return { title: 'What we do', color: 'bg-green-400' }
-    case 'get-to-know-us':
-      return { title: 'Get to know us', color: 'bg-red-400' }
-    case 'lets-meet':
-      return { title: `Let's meet 🌳`, color: 'bg-black' }
-    default:
-      return { title: `Let's get started 🚀`, color: 'bg-blue-400' }
-  }
+  if (elementVisibility.value.landing)
+    return { title: `Let's get started 🚀`, color: 'bg-blue-400' }
+  else if (elementVisibility.value.howWeWork)
+    return { title: 'How we Work 🏋️', color: 'bg-yellow-400' }
+  else if (elementVisibility.value.whatWeDo)
+    return { title: 'What we do', color: 'bg-green-400' }
+  else if (elementVisibility.value.getToKnowUs)
+    return { title: 'Get to know us', color: 'bg-red-400' }
+  else if (elementVisibility.value.letsMeet)
+    return { title: `Let's meet 🌳`, color: 'bg-black' }
+  else return { title: `Let's get started 🚀`, color: 'bg-blue-400' }
 })
 </script>
 
@@ -39,18 +39,18 @@ const currentSectionButton = computed(() => {
   <main class="container mx-auto font-sans font-normal">
     <header></header>
     <section class="text-xl">
-      <LandingPage ref="landing" />
+      <div ref="landing"><LandingPage /></div>
     </section>
     <WhoAreYou />
     <YourAge />
     <WhereDoYouLive />
-    <HowWeWork ref="howWeWork" />
+    <div ref="howWeWork"><HowWeWork /></div>
     <OurEcoHub />
-    <WhatWeDo />
-    <GetToKnowUs />
+    <div ref="whatWeDo"><WhatWeDo /></div>
+    <div ref="getToKnowUs"><GetToKnowUs /></div>
     <OurCurrentEvents />
     <MemberProfile />
-    <LetsMeet />
+    <div ref="letsMeet"><LetsMeet /></div>
 
     <SectionButton
       :title="currentSectionButton.title"
