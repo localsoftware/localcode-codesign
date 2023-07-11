@@ -1,33 +1,22 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { useLocationStore } from '~/store/location'
-import { storeToRefs } from 'pinia'
-
-const locationStore = useLocationStore()
-const { currentLocation } = storeToRefs(locationStore)
-console.log(currentLocation.value, 'testestsetest')
+import { ref } from 'vue'
 </script>
 
 <template>
-  <main class="container mx-auto font-sans font-normal">
-    <header></header>
-    <section class="text-xl">
-      <LandingPage />
+  <main class="font-sans font-normal">
+    <header><LocalCodeHeader /></header>
+    <section class="relative">
+      <DesignSite :location="`Owen's Street - Mission Bay`" />
     </section>
-    <WhoAreYou />
-    <YourAge />
-    <WhereDoYouLive />
-    <HowWeWork />
-    <OurEcoHub />
-    <WhatWeDo />
-    <GetToKnowUs />
-    <OurCurrentEvents />
-    <MemberProfile />
-    <LetsMeet />
 
-    <footer
+    <section>
+      <img src="/imgs/placeholder.png" alt="Section 1" class="w-full h-auto" />
+    </section>
+
+    <!-- <footer
       class="py-14 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
-    ></footer>
+    ></footer> -->
   </main>
 </template>
 

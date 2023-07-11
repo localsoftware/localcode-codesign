@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 
 export const useLocationStore = defineStore('locationStore', () => {
-  const currentLocation = ref(0)
+  const currentLocation = ref('landing')
 
-  function changeCurrentLocation(location: number) {
+  function changeCurrentLocation(location: string) {
     currentLocation.value = location
   }
 
