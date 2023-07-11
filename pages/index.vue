@@ -1,6 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import { ref } from 'vue'
+
+const landscape = ref(50)
+const stuff = ref(50)
 </script>
 
 <template>
@@ -21,7 +24,7 @@ import { ref } from 'vue'
         }"
         :height="250"
         :type="'TOTAL COST'"
-        :position="'right-6 bottom-8'"
+        :position="'right-[5%] bottom-16'"
       />
     </section>
 
@@ -36,9 +39,28 @@ import { ref } from 'vue'
         }"
         :height="250"
         :type="'FUNDING AVAILABLE'"
-        :position="'right-6 top-28'"
+        :position="'right-[5%] top-28'"
       />
     </section>
+
+    <div class="landscape">
+      <el-slider
+        v-model="landscape"
+        class="absolute w-20"
+        :show-tooltip="false"
+        :size="'large'"
+      />
+    </div>
+
+    <div class="stuff">
+      <el-slider
+        v-model="stuff"
+        vertical
+        height="80%"
+        :show-tooltip="false"
+        :size="'large'"
+      />
+    </div>
 
     <section>
       <img src="/imgs/placeholder.png" alt="Section 1" class="w-full h-full" />
@@ -53,5 +75,19 @@ import { ref } from 'vue'
 <style>
 body {
   background-color: #fffdf8;
+}
+
+.landscape .el-slider {
+  width: 90%;
+  left: 50%;
+  bottom: 12px;
+  transform: translate(-50%, 0%);
+}
+
+.stuff .el-slider {
+  position: absolute;
+  right: 20px;
+  bottom: 50%;
+  transform: translate(0%, 52%);
 }
 </style>
