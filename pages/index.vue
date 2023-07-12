@@ -63,7 +63,7 @@ const stuff = ref(50)
     </div>
 
     <section>
-      <img src="/imgs/placeholder.png" alt="Section 1" class="w-full h-full" />
+      <ThreeJS />
     </section>
 
     <!-- <footer
