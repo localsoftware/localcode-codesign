@@ -3,7 +3,6 @@ import * as THREE from 'three'
 
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import { Rhino3dmLoader } from 'three/addons/loaders/3DMLoader.js'
-
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js'
 
 const test = ref(null)
@@ -49,6 +48,14 @@ function init() {
 
     // hide spinner
     test.style.display = 'none'
+  })
+
+  const jsonLoader = new THREE.ObjectLoader()
+  jsonLoader.load('json/benchModel.json', function (geometry) {
+    // mesh.position.x = 500
+    // mesh.position.y = 100
+    // mesh.position.z = 500
+    scene.add(geometry)
   })
 
   controls = new OrbitControls(camera, renderer.domElement)
