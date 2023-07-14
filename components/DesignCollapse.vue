@@ -1,5 +1,11 @@
 <script setup>
 import { ref } from 'vue'
+import { useCostStore } from '~/store/cost'
+import { storeToRefs } from 'pinia'
+
+const costStore = useCostStore()
+const { currentCostGraph } = storeToRefs(costStore)
+const { currentFundsGraph } = storeToRefs(costStore)
 
 const activeNames = ref([])
 const handleChange = (val) => {
@@ -10,38 +16,11 @@ const handleChange = (val) => {
 <template>
   <div class="design-collapse">
     <el-collapse v-model="activeNames" @change="handleChange">
-      <el-collapse-item title="Surfaces" name="1">
-        <div>
-          Consistent with real life: in line with the process and logic of real
-          life, and comply with languages and habits that the users are used to;
-        </div>
-        <div>
-          Consistent within interface: all elements should be consistent, such
-          as: design style, icons and texts, position of elements, etc.
-        </div>
+      <el-collapse-item title="How to fund the project" name="1">
+        <FeedbackGraph :graph="currentFundsGraph" />
       </el-collapse-item>
-      <el-collapse-item title="Structures" name="2">
-        <div>
-          Operation feedback: enable the users to clearly perceive their
-          operations by style updates and interactive effects;
-        </div>
-        <div>
-          Visual feedback: reflect current state by updating or rearranging
-          elements of the page.
-        </div>
-      </el-collapse-item>
-      <el-collapse-item title="Functions" name="3">
-        <div>
-          Simplify the process: keep operating process simple and intuitive;
-        </div>
-        <div>
-          Definite and clear: enunciate your intentions clearly so that the
-          users can quickly understand and make decisions;
-        </div>
-        <div>
-          Easy to identify: the interface should be straightforward, which helps
-          the users to identify and frees them from memorizing and recalling.
-        </div>
+      <el-collapse-item title="How much the project will cost" name="2">
+        <FeedbackGraph :graph="currentCostGraph" />
       </el-collapse-item>
     </el-collapse>
   </div>
