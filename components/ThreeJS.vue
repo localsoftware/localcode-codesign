@@ -42,7 +42,15 @@ function init() {
 
   const rhinoLoader = new Rhino3dmLoader()
   rhinoLoader.setLibraryPath('https://cdn.jsdelivr.net/npm/rhino3dm@7.15.0/')
-  rhinoLoader.load('models/Rhino_Logo.3dm', function (object) {
+  // rhinoLoader.load('models/Rhino_Logo.3dm', function (object) {
+  //   scene.add(object)
+  //   initGUI(object.userData.layers)
+
+  //   // hide spinner
+  //   test.style.display = 'none'
+  // })
+
+  rhinoLoader.load('models/BaseFile.3dm', function (object) {
     scene.add(object)
     initGUI(object.userData.layers)
 
@@ -50,13 +58,13 @@ function init() {
     test.style.display = 'none'
   })
 
-  const jsonLoader = new THREE.ObjectLoader()
-  jsonLoader.load('json/benchModel.json', function (geometry) {
-    // mesh.position.x = 500
-    // mesh.position.y = 100
-    // mesh.position.z = 500
-    scene.add(geometry)
-  })
+  // const jsonLoader = new THREE.ObjectLoader()
+  // jsonLoader.load('json/benchModel.json', function (geometry) {
+  //   // mesh.position.x = 500
+  //   // mesh.position.y = 100
+  //   // mesh.position.z = 500
+  //   scene.add(geometry)
+  // })
 
   controls = new OrbitControls(camera, renderer.domElement)
 
