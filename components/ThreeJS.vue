@@ -22,7 +22,7 @@ function init() {
 
   renderer = new THREE.WebGLRenderer({ antialias: true })
   renderer.setPixelRatio(window.devicePixelRatio)
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  renderer.setSize(window.innerWidth - 2, window.innerHeight - 2)
   renderer.useLegacyLights = false
   test.value.appendChild(renderer.domElement)
 

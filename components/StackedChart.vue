@@ -49,7 +49,7 @@ const svgHeight = computed(() => {
 <style scoped>
 .label {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   fill: #fff;
   text-anchor: left;
 }
