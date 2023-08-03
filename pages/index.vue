@@ -80,7 +80,7 @@ const stuff = ref(40)
 
     <!-- ThreeJS Canvas -->
     <section>
-      <ThreeJS />
+      <ThreeJS-mat />
     </section>
     <!-- <footer
       class="py-14 flex flex-col sm:flex-row justify-between items-start gap-2 leading-tight"
