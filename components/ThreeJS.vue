@@ -207,8 +207,14 @@ function initGUI(layers) {
         scene.traverse(function (child) {
           if (child.userData.hasOwnProperty('attributes')) {
             if ('layerIndex' in child.userData.attributes) {
+              console.log('This child is', child)
+              console.log(
+                'layerIndex is ',
+                child.userData.attributes.layerIndex
+              )
               const layerName =
-                layers[child.userData.attributes.layerIndex].name
+                object.userData.layers[child.userData.attributes.layerIndex]
+                  .name
 
               // TODO: Add a dictionary of layer:material. Make sure all layer names in Rhino are set well.
               if (layerName === name) {

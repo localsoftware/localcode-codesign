@@ -80,11 +80,11 @@ function init() {
 
   scene = new THREE.Scene()
 
-  const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1)
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 2)
   scene.add(hemiLight)
 
-  const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
-  directionalLight.position.set(0, 0, 2)
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 2)
+  directionalLight.position.set(2, 2, 5)
   directionalLight.castShadow = true
   scene.add(directionalLight)
 
@@ -111,8 +111,7 @@ function init() {
   })
   grassMat.transparent = true // needs to be set for alpha to work.
   const grassObj = new THREE.Mesh(matrixGeo, grassMat)
-  console.log('grass is', grassObj)
-  scene.add(grassObj)
+  // scene.add(grassObj)
 
   // load Gravel texture
   const gravelTex = textureLoader.load('/imgs/textures/gravelTex.png')
@@ -127,7 +126,7 @@ function init() {
   gravelObj.position.x += 50
   gravelObj.position.z += 0.01
   gravelObj.rotation.z = Math.PI / 3
-  scene.add(gravelObj)
+  // scene.add(gravelObj)
 
   // load Ground texture
   const groundTex = textureLoader.load('/imgs/textures/groundTex.png')
@@ -141,7 +140,7 @@ function init() {
   groundObj.position.x += 100
   groundObj.position.z += 0.02
   groundObj.rotation.z = Math.PI / 6
-  scene.add(groundObj)
+  // scene.add(groundObj)
 
   // load paving texture
   const pavingTex = textureLoader.load('/imgs/textures/pavingTex.png')
@@ -155,37 +154,107 @@ function init() {
   pavingObj.position.y += 50
   pavingObj.position.z += 0.02
   pavingObj.rotation.z = Math.PI / 2
-  scene.add(pavingObj)
+  // scene.add(pavingObj)
 
-  rhinoLoader.load('models/bench.3dm', function (object) {
-    scene.add(object)
-    // initGUI(object.userData.layers)
-    // hide spinner
-    console.log('test', object)
-
-    object.traverse(function (child) {
-      if (child instanceof THREE.Mesh) {
-        // ...and we replace the material with our custom one
-        child.material = groundMat
-      }
-    })
-
-    test.style.display = 'none'
+  const woodTex = textureLoader.load('/imgs/textures/woodTex.png')
+  const woodMat = new THREE.MeshStandardMaterial({
+    map: woodTex,
+    side: THREE.DoubleSide,
   })
+
+  const whiteMat = new THREE.MeshStandardMaterial({})
+  const metalTex = textureLoader.load('/imgs/textures/metalTex.png')
+  const metalMat = new THREE.MeshStandardMaterial({
+    map: metalTex,
+    side: THREE.DoubleSide,
+  })
+  // metalMat.transparent = true // needs to be set for alpha to work.
 
   rhinoLoader.load('models/testModel.3dm', function (object) {
     scene.add(object)
-    // initGUI(object.userData.layers)
-    // hide spinner
-    console.log('test2', object)
 
-    object.traverse(function (child) {
-      if (child instanceof THREE.Mesh) {
-        // ...and we replace the material with our custom one
-        console.log(child.layer)
-        // child.material = grassMat
+    scene.traverse(function (child) {
+      if (child.userData.hasOwnProperty('attributes')) {
+        if ('layerIndex' in child.userData.attributes) {
+          // check the layerIndex and crosscheck with the name in object.userData.layers
+          // console.log('This child is', child)
+          // console.log('layerIndex is ', child.userData.attributes.layerIndex)
+          const layerName =
+            object.userData.layers[child.userData.attributes.layerIndex].name
+
+          if (layerName == 'GRASS') {
+            // apply grass
+            child.material = grassMat
+
+            const edge = new THREE.EdgesGeometry(child.geometry)
+            const line = new THREE.LineSegments(
+              edge,
+              new THREE.LineBasicMaterial({
+                color: 'rgb(139,134,78)',
+                linewidth: 20,
+              })
+            )
+            scene.add(line)
+          }
+
+          if (layerName == 'TREE') {
+            child.material = treeMaterial
+          } else if (layerName == 'METAL') {
+            child.material = metalMat
+          } else if (layerName == 'WETLAND') {
+            child.material = gravelMat
+            const edge = new THREE.EdgesGeometry(child.geometry)
+            const line = new THREE.LineSegments(
+              edge,
+              new THREE.LineBasicMaterial({
+                color: 'rgb(139,134,78)',
+                linewidth: 20,
+              })
+            )
+            scene.add(line)
+          } else if (
+            (layerName == 'MESH') |
+            (layerName == 'MAIN') |
+            (layerName == 'BUILDINGS')
+          ) {
+            child.material = whiteMat
+          } else if (layerName == 'WOOD') {
+            child.material = woodMat
+          } else if (layerName == 'PATH') {
+            child.material = pavingMat
+            const edge = new THREE.EdgesGeometry(child.geometry)
+            const line = new THREE.LineSegments(
+              edge,
+              new THREE.LineBasicMaterial({
+                color: 'rgb(139,134,78)',
+                linewidth: 20,
+              })
+            )
+            scene.add(line)
+          } else if (layerName == 'GARDEN') {
+            // apply grass
+            child.material = groundMat
+            const edge = new THREE.EdgesGeometry(child.geometry)
+            const line = new THREE.LineSegments(
+              edge,
+              new THREE.LineBasicMaterial({
+                color: 'rgb(139,134,78)',
+                linewidth: 20,
+              })
+            )
+            scene.add(line)
+          }
+        }
       }
     })
+
+    // object.traverse(function (child) {
+    //   if (child instanceof THREE.Mesh) {
+    //     // ...and we replace the material with our custom one
+    //     console.log('child is', child)
+    //     // child.material = grassMat
+    //   }
+    // })
 
     test.style.display = 'none'
   })
