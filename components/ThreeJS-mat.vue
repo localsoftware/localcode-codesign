@@ -162,7 +162,8 @@ function init() {
     side: THREE.DoubleSide,
   })
 
-  const whiteMat = new THREE.MeshStandardMaterial({})
+  const whiteMat = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide })
+
   const metalTex = textureLoader.load('/imgs/textures/metalTex.png')
   const metalMat = new THREE.MeshStandardMaterial({
     map: metalTex,
@@ -244,6 +245,8 @@ function init() {
             )
             scene.add(line)
           }
+
+          initGUI(object.userData.layers)
         }
       }
     })
@@ -296,6 +299,36 @@ function animate() {
   renderer.render(scene, camera)
 
   requestAnimationFrame(animate)
+}
+
+function initGUI(layers) {
+  gui = new GUI({ title: 'layers' })
+
+  for (let i = 0; i < layers.length; i++) {
+    const layer = layers[i]
+    gui
+      .add(layer, 'visible')
+      .name(layer.name)
+      .onChange(function (val) {
+        // val is True or False
+        const name = this.object.name
+
+        scene.traverse(function (child) {
+          if (child.userData.hasOwnProperty('attributes')) {
+            if ('layerIndex' in child.userData.attributes) {
+              const layerName =
+                layers[child.userData.attributes.layerIndex].name
+
+              // TODO: Add a dictionary of layer:material. Make sure all layer names in Rhino are set well.
+              if (layerName === name) {
+                child.visible = val
+                layer.visible = val
+              }
+            }
+          }
+        })
+      })
+  }
 }
 </script>
 
