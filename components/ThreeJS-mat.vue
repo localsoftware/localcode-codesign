@@ -108,7 +108,8 @@ function init() {
     map: grassTex,
     alphaMap: alphaTex,
     side: THREE.DoubleSide,
-    transparent: true,
+    alphaTest: 0.5,
+    transparent: false,
   })
   const grassObj = new THREE.Mesh(matrixGeo, grassMat)
   // scene.add(grassObj)
@@ -119,7 +120,8 @@ function init() {
     map: gravelTex,
     alphaMap: alphaTex,
     side: THREE.DoubleSide,
-    transparent: true,
+    alphaTest: 0.5,
+    transparent: false,
   })
   const gravelGeo = new THREE.CircleGeometry(30, 20)
   const gravelObj = new THREE.Mesh(gravelGeo, gravelMat)
@@ -134,7 +136,8 @@ function init() {
     map: groundTex,
     alphaMap: alphaTex,
     side: THREE.DoubleSide,
-    transparent: true,
+    alphaTest: 0.5,
+    transparent: false,
   })
   const groundObj = new THREE.Mesh(matrixGeo, groundMat)
   groundObj.position.x += 100
@@ -148,7 +151,8 @@ function init() {
     map: pavingTex,
     alphaMap: alphaTex,
     side: THREE.DoubleSide,
-    transparent: true,
+    alphaTest: 0.5,
+    transparent: false,
   })
   const pavingObj = new THREE.Mesh(matrixGeo, pavingMat)
   pavingObj.position.y += 50
