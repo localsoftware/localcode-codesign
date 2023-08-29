@@ -20,7 +20,7 @@ onMounted(() => {
 function initSky() {
   // Add Sky
   sky = new Sky()
-  sky.scale.setScalar(450000)
+  sky.scale.setScalar(50000)
   sky.material.uniforms.up.value.set(0, 0, 1)
   scene.add(sky)
 
@@ -29,12 +29,12 @@ function initSky() {
   /// GUI
 
   const effectController = {
-    turbidity: 10,
-    rayleigh: 3,
+    turbidity: 1,
+    rayleigh: 5,
     mieCoefficient: 0.005,
     mieDirectionalG: 0.7,
-    elevation: 5,
-    azimuth: 0,
+    elevation: 65,
+    azimuth: 90,
     exposure: renderer.toneMappingExposure,
   }
 
@@ -67,7 +67,7 @@ function init() {
   renderer.setSize(window.innerWidth - 2, window.innerHeight - 2)
   renderer.useLegacyLights = false
   renderer.toneMapping = THREE.ACESFilmicToneMapping
-  renderer.toneMappingExposure = 0.5
+  renderer.toneMappingExposure = 0.85
   test.value.appendChild(renderer.domElement)
 
   camera = new THREE.PerspectiveCamera(
@@ -128,7 +128,6 @@ function init() {
   gravelObj.position.x += 50
   gravelObj.position.z += 0.01
   gravelObj.rotation.z = Math.PI / 3
-  // scene.add(gravelObj)
 
   // load Ground texture
   const groundTex = textureLoader.load('/imgs/textures/groundTex.png')
@@ -166,7 +165,19 @@ function init() {
     side: THREE.DoubleSide,
   })
 
-  const whiteMat = new THREE.MeshStandardMaterial({ side: THREE.DoubleSide })
+  const bldgMat = new THREE.MeshStandardMaterial({
+    color: 0x04d9ff,
+    side: THREE.DoubleSide,
+  })
+  const meshMat = new THREE.MeshStandardMaterial({
+    color: 0xccff00,
+    side: THREE.DoubleSide,
+  })
+
+  const coreMat = new THREE.MeshStandardMaterial({
+    color: 0xff00ff,
+    side: THREE.DoubleSide,
+  })
 
   const metalTex = textureLoader.load('/imgs/textures/metalTex.png')
   const metalMat = new THREE.MeshStandardMaterial({
@@ -217,12 +228,12 @@ function init() {
               })
             )
             scene.add(line)
-          } else if (
-            (layerName == 'MESH') |
-            (layerName == 'MAIN') |
-            (layerName == 'BUILDINGS')
-          ) {
-            child.material = whiteMat
+          } else if ((layerName == 'MESH') | (layerName == 'MAIN')) {
+            child.material = meshMat
+          } else if (layerName == 'BUILDINGS') {
+            child.material = bldgMat
+          } else if (layerName == 'CORE') {
+            child.material = coreMat
           } else if (layerName == 'WOOD') {
             child.material = woodMat
           } else if (layerName == 'PATH') {
@@ -266,20 +277,28 @@ function init() {
     test.style.display = 'none'
   })
 
+  // Add infinte floor plane
+  var planeMat = new THREE.MeshBasicMaterial({
+    color: 0xffffff,
+    side: THREE.DoubleSide,
+  })
+  var planeGeo = new THREE.CircleGeometry(1000, 10)
+
+  var infPlane = new THREE.Mesh(planeGeo, planeMat)
+  infPlane.position.z = -50
+  infPlane.receiveShadow = false
+  scene.add(infPlane)
+
   // Add a tree.
-  const treeGeo = new THREE.PlaneGeometry(20, 32)
   const treeTex = textureLoader.load('/imgs/textures/treeTex-01.png')
   const treeAlpha = textureLoader.load('/imgs/textures/treeAlpha-01.png')
   const treeMaterial = new THREE.MeshStandardMaterial({
     map: treeTex,
     alphaMap: treeAlpha,
     side: THREE.DoubleSide,
+    transparent: false,
+    alphaTest: 0.5,
   })
-  treeMaterial.transparent = true
-  const treePlane = new THREE.Mesh(treeGeo, treeMaterial)
-  treePlane.rotation.x = Math.PI / 2
-  treePlane.position.z += 20
-  scene.add(treePlane)
 
   controls = new OrbitControls(camera, renderer.domElement)
   controls.target.set(0, 0, 0)
